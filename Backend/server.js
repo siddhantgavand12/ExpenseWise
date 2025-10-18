@@ -2,9 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-import Expense from './models/Expense.js';
-import UserCategory from './models/UserCategory.js';
-import Budget from './models/Budget.js';
+// NEW (CommonJS)
+const expenseSchema = require('./models/Expense');
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -32,14 +32,11 @@ app.get('/', (req, res) => {
 
 app.get('/all-data', async (req, res) => {
   try {
-    const expenses = await Expense.find();        // Get all expenses
-    const categories = await UserCategory.find(); // Get all categories
-    const budgets = await Budget.find();          // Get all budgets
+    const expenses = await expenseSchema.find();        // Get all expenses
+    
 
     res.json({
-      expenses,
-      categories,
-      budgets,
+      expenses
     });
   } catch (err) {
     console.error(err);
