@@ -1,6 +1,6 @@
 import { Expense, UserCategory, Budget } from '../types';
 
-const API_BASE_URL = 'https://expensewise-59d8.onrender.com'; // Your server URL
+const API_BASE_URL = 'https://expensewise-59d8.onrender.com/api'; // Your server URL
 
 // Helper function for handling API responses
 async function handleResponse<T>(response: Response): Promise<T> {
