@@ -1,3 +1,7 @@
+/Backend/node_modules
+/Backend/.env
+.env*
+!.env.example
 # Logs
 logs
 *.log
@@ -8,8 +12,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-/Backend/node_modules
-/Backend/.env
 dist
 dist-ssr
 *.local
