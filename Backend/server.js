@@ -22,3 +22,7 @@ app.use('/api', require('./routes/data'));
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+app.get('/', (req, res) => {
+  res.send('ExpenseWise Backend is running!');
+});
